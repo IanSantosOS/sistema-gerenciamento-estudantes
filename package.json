@@ -1,0 +1,18 @@
+{
+  "name": "sistema-gerenciamento-estudantes",
+  "version": "1.0.0",
+  "description": "Projeto integrado das disciplinas de POO, PWEB e Fundamentos de Banco de Dados",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "node --watch app"
+  },
+  "keywords": [],
+  "author": "Gabriel Rodrigues, Ian dos Santos, Mayara Lins, Sofia Laura",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0"
+  }
+}
