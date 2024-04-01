@@ -24,10 +24,17 @@ Projeto integrado das disciplinas de POO, PWEB e Fundamentos de Banco de Dados
 
 
 ## Perguntas 💭
-1.
-2.
-3.
+1. Faça um breve comentário sobre a utilização no projeto de Orientação Objetos e suas características
+    - Resposta 1
 
+2. Faça um breve comentário sobre como foi realizada a conexão com o banco de dados utilizando o pacote mysql, o padrão DAO e orientação a objetos. 
+    - Resposta 2
+
+3. Há algum problema/erro identificado?
+    - Resposta 3
+
+4. Descrição sua experiência em realizar o projeto e as dificuldades
+    - Resposta 4
 
 ## Anexos 📌
 
@@ -40,11 +47,8 @@ Projeto integrado das disciplinas de POO, PWEB e Fundamentos de Banco de Dados
 
 <div align="center">
 
-### Considerações sobre a aplicação desenvolvida. 💭
-
-**Sobre o projeto...**
-foi uma jornada desafiadora e enriquecedora para nossa equipe. Distribuímos as responsabilidades entre, enfrentando dificuldades técnicas ao longo do caminho.Além disso,reconhecemos a importância da validação de dados em aplicações web. No geral, o projeto nos proporcionou crescimento profissional e pessoal, e estamos confiantes de que as lições aprendidas serão aplicadas em futuros projetos.
-
-### Ideia descartada 🗑 
+## Ideia descartada 🗑 
 
 **Decidimos descartar a implementação de uma API para validar o campo de CPF no formulário devido à falta de tempo, desvio da objetividade do projeto e priorização dos recursos para outras funcionalidades mais relevantes.**
+
+</div>
