@@ -19,10 +19,10 @@ Projeto integrado das disciplinas de POO, PWEB e Fundamentos de Banco de Dados
 
 | Nome | Função |
 |--------|------|
-| Gabriel Rodrigues | fshfhjsfjgsjhfdsfhsfhsjhffdsihjshfjhsffsjfsffbsjfgs |
-| Ian dos Santos | sdisfhsfkjsfnsfsjsfjsfhjhsfjhfshfhsfisjffsfsffffsfsfgg |
-| Mayara Lins  | sffhskfhksfdshwrhiwhrihwirhwhwrhfsfhsjfqfsjfsfsffsfsfgdg |
-| Sofia Laura | sfhsifhishfsfwehwrhjrgjwgrgwrgwrgfsfjhjsbfbsfsfsfssfgdgdgdg | 
+| Gabriel Rodrigues | dsfjsbfjnfsf |
+| Ian dos Santos | fsfbsjfbjsbfjsf |
+| Mayara Lins  | scjzbdcjbsbjcbsjc |
+| Sofia Laura | djdbjabdjbdbabdjbjad | 
 
 ## Perguntas 💭
 1. Faça um breve comentário sobre a utilização no projeto de Orientação Objetos e suas características
