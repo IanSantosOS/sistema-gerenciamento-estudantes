@@ -15,7 +15,7 @@ Projeto integrado das disciplinas de POO, PWEB e Fundamentos de Banco de Dados
 
 ## Integrantes 🤝🏻
 
-<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmdhYm82eHVqbXp4dGJ2eXJ5YXg2MjE5cmNnaG9zMTUwOWhlMmozNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26tn33aiTi1jkl6H6/giphy.gif" alt="GIF" style="border-radius: 20px; width: 300px; height: 200px;" align="right">
+<img src="https://media2.giphy.com/media/du3J3cXyzhj75IOgvA/200.webp?cid=ecf05e477mjddg8atv414antsy2lmawts79pz6jcya56m6zr&ep=v1_gifs_search&rid=200.webp&ct=g" alt="GIF" style="border-radius: 20px; width: 250px; height: 200px;" align="right">
 
 | Nome | Função |
 |--------|------|
@@ -41,7 +41,7 @@ Projeto integrado das disciplinas de POO, PWEB e Fundamentos de Banco de Dados
 
 - [Documentação Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 - [Documentação Express-js](https://expressjs.com/)
-- []()
+- [Modelos javaScript-ejs](https://ejs.co/)
   
 
 <div align="center">
