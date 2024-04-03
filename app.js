@@ -17,7 +17,7 @@ app.use(session({
     cookie: { secure: false }
 }));
 
-// Rotas Aqui
+// Rotas Aqui;
 
 app.use((err, _req, res, _next) => {
     console.error(err.stack);

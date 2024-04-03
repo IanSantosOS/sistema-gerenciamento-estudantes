@@ -45,7 +45,7 @@ Projeto integrado das disciplinas de POO, PWEB e Fundamentos de Banco de Dados.
 
 ### Instalação de dependencias
 
-    npm install express ejs express-session mysql2
+    npm install express ejs express-session mysql2 dotenv
 
 ### Ativação do servidor
 
@@ -68,6 +68,9 @@ Projeto integrado das disciplinas de POO, PWEB e Fundamentos de Banco de Dados.
 
 - **MySQL2:** Ferramenta usada para conectar e utilizar um servidor de banco de dados mysql ao nodejs. |
   ➡️ [npm](https://www.npmjs.com/package/mysql2)
+
+- **DotEnv:** Responsável pelas variáveis de ambiente. |
+  ➡️ [npm](https://www.npmjs.com/package/dotenv)
 
 ## Referências 📌
 
