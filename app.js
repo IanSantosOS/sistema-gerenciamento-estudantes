@@ -19,6 +19,10 @@ app.use(session({
 
 // Rotas Aqui;
 
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
 app.use((err, _req, res, _next) => {
     console.error(err.stack);
     res.status(500).send('Erro interno do servidor');
