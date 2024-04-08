@@ -23,6 +23,14 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/login', (req, res) => {
+    res.render('login');
+});
+
+app.get('/cadastro', (req, res) => {
+    res.render('cadastro');
+});
+
 app.use((err, _req, res, _next) => {
     console.error(err.stack);
     res.status(500).send('Erro interno do servidor');

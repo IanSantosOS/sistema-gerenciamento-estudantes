@@ -1,0 +1,53 @@
+body{
+    background-image: url('/img/zyro-image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#titulo{
+
+    text-shadow: 3px 3px 10px #0000006e !important;
+}
+
+#form-cadastro{
+    background-color: rgba(128, 128, 128, 0.699);
+    padding:20px;
+    border-radius: 15px;
+    color: aliceblue;
+}
+
+form {
+    max-width: 60rem;
+    backdrop-filter: blur(.7em);
+}
+
+input[type=radio] {
+    accent-color: #003f4f;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.grid-column-2 {
+    gap: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-column-3 {
+    gap: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+button {
+    background-color: black !important;
+    border: none !important;
+}
+
+#voltar-b{
+    background-color: black !important;
+    border: none !important;
+}
