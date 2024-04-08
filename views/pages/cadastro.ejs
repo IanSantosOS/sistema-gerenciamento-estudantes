@@ -9,16 +9,7 @@
   <title>Cadastro</title>
 </head>
 <body>
-  <nav class="navbar navbar-expanded-lg bg-body-tertiary border-bottom position-sticky top-0 z-3">
-    <div class="container-fluid px-4">
-      <a href="#" class="navbar-brand">
-        <h1 id="titulo">Cadastro</h1>
-      </a>
-      <form>
-        <a id="voltar-b" href="/" class="btn btn-primary px-4">Voltar</a>
-      </form>
-    </div>
-  </nav>
+  
 <br><br>
   <main class="px-4">
     <form id="form-cadastro">
@@ -71,9 +62,9 @@
             </select>
           </div>
           <div>
-            <label for="rendaMensal" class="form-label">Renda Mensal</label>
-            <input type="number" class="form-control" id="rendaMensal" name="rendaMensal" placeholder="0,00" step="0.01" inputmode="decimal" aria-describedby="rendaMensal-error">
-            <div id="rendaMensal-error" class="invalid-feedback"></div>
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="number" class="form-control" id="telefone" name="telefone" placeholder="(00) 0 0000-0000" aria-describedby="rendaMensal-error">
+            <div id="telefone-error" class="invalid-feedback"></div>
           </div>
         </div>
       </div>
@@ -103,40 +94,14 @@
 
         <div class="grid-column-2 mb-3">
           <div>
-            <label for="estado" class="form-label">Estado</label>
-            <select class="form-select" id="estado">
-              <option value="acre" selected>Acre</option>
-              <option value="alagoas">Alagoas</option>
-              <option value="amapá">Amapá</option>
-              <option value="amazonas">Amazonas</option>
-              <option value="bahia">Bahia</option>
-              <option value="ceará">Ceará</option>
-              <option value="espírito santo">Espírito Santo</option>
-              <option value="goiás">Goiás</option>
-              <option value="maranhão">Maranhão</option>
-              <option value="mato grosso">Mato Grosso</option>
-              <option value="mato grosso do sul">Mato Grosso do Sul</option>
-              <option value="minas gerais">Minas Gerais</option>
-              <option value="pará">Pará</option>
-              <option value="paraíba">Paraíba</option>
-              <option value="paraná">Paraná</option>
-              <option value="pernambuco">Pernambuco</option>
-              <option value="piauí">Piauí</option>
-              <option value="rio de janeiro">Rio de Janeiro</option>
-              <option value="rio grande do norte">Rio Grande do Norte</option>
-              <option value="rio grande do sul">Rio Grande do Sul</option>
-              <option value="rondônia">Rondônia</option>
-              <option value="roraima">Roraima</option>
-              <option value="santa catarina">Santa Catarina</option>
-              <option value="são paulo">São Paulo</option>
-              <option value="sergipe">Sergipe</option>
-              <option value="tocantins">Tocantins</option>
-            </select>
-          </div>
-          <div>
             <label for="cidade" class="form-label">Cidade</label>
             <input type="text" class="form-control" id="cidade" name="cidade" placeholder="São Paulo" aria-describedby="cidade-error">
             <div id="cidade-error" class="invalid-feedback"></div>
+          </div>
+          <div>
+            <label for="cidade" class="form-label">Bairro</label>
+            <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" aria-describedby="bairro-error">
+            <div id="bairro-error" class="invalid-feedback"></div>
           </div>
         </div>
       </div>

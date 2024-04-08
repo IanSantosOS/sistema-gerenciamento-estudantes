@@ -4,8 +4,14 @@ body{
     background-size: cover;
 }
 
-#titulo{
+#logo{
+    width: 12em;
+    height: 5%;
+    transform: translate(-16%);
+}
 
+#titulo{
+    transform: translate(-60%);
     text-shadow: 3px 3px 10px #0000006e !important;
 }
 
