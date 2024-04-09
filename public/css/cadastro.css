@@ -1,23 +1,24 @@
 body{
     background-image: url('/img/fundo_cadastro.png');
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
-#logo{
-    width: 12em;
-    height: 5%;
-    transform: translate(-16%);
+
+
+#logo {
+    width: 13em; /* Reduzindo o tamanho da logo */
+    height: auto; /* Permitindo que a altura seja ajustada proporcionalmente */
+    margin-right: 1em; /* Adicionando margem à direita para separar a logo dos outros elementos */
 }
 
-#titulo{
-    transform: translate(-60%);
-    text-shadow: 3px 3px 10px #0000006e !important;
+h2 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1em; /* Ajuste conforme necessário para separar a logo do título */
 }
 
-#form-cadastro{
+#form-cadastro {
     background-color: rgba(128, 128, 128, 0.699);
-    padding:20px;
+    padding: 20px;
     border-radius: 15px;
     color: aliceblue;
 }
@@ -28,7 +29,7 @@ form {
 }
 
 input[type=radio] {
-    accent-color: #003f4f;
+    accent-color: #000000;
 }
 
 main {
@@ -53,7 +54,4 @@ button {
     border: none !important;
 }
 
-#voltar-b{
-    background-color: black !important;
-    border: none !important;
-}
+
