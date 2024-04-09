@@ -152,7 +152,7 @@ h2 {
 
 .links a:hover,
 .links a:nth-child(2) {
-	color: aliceblue;
+	color: #0a3800;
 }
 
 input[type="submit"] {
@@ -167,10 +167,14 @@ input[type="submit"] {
 	margin-top: 10px;
 }
 
+input[type="submit"]:hover {
+	background-color: #0a3800;
+}
+
 input[type="submit"]:active {
 	opacity: 0.8;
 }
 
 #login {
-    color: aliceblue;
+	color: aliceblue;
 }
