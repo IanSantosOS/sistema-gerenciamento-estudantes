@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+// Configuração
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views', 'pages'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -19,22 +21,16 @@ app.use(session({
 
 // Rotas Aqui;
 
-app.get('/', (req, res) => {
-    res.render('index');
-});
-
-app.get('/login', (req, res) => {
-    res.render('login');
-});
-
-app.get('/cadastro', (req, res) => {
-    res.render('cadastro');
-});
+app.use('/', require('./homepageRouter'));
+app.use('/', require('./routers/loginRouter'));
+app.use('/', require('./routers/cadastroRouter'));
 
 app.use((err, _req, res, _next) => {
     console.error(err.stack);
     res.status(500).send('Erro interno do servidor');
 });
+
+// Servidor
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
