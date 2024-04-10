@@ -21,7 +21,7 @@ app.use(session({
 
 // Rotas Aqui;
 
-app.use('/homepage', require('./routers/homepageRouter'));
+app.use('/', require('./routers/homepageRouter'));
 app.use('/login', require('./routers/loginRouter'));
 app.use('/cadastro', require('./routers/cadastroRouter'));
 
