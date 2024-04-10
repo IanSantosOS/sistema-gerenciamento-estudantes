@@ -21,9 +21,9 @@ app.use(session({
 
 // Rotas Aqui;
 
-app.use('/', require('./homepageRouter'));
-app.use('/', require('./routers/loginRouter'));
-app.use('/', require('./routers/cadastroRouter'));
+app.use('/', require('./routers/homepageRouter'));
+app.use('/login', require('./routers/loginRouter'));
+app.use('/cadastro', require('./routers/cadastroRouter'));
 
 app.use((err, _req, res, _next) => {
     console.error(err.stack);
