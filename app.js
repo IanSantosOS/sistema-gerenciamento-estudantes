@@ -19,7 +19,7 @@ app.use(session({
     cookie: { secure: false }
 }));
 
-// Rotas Aqui;
+// Rotas aqui;
 
 app.use('/', require('./routers/homepageRouter'));
 app.use('/login', require('./routers/loginRouter'));
