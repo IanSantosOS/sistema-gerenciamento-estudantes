@@ -107,7 +107,7 @@ h2 {
 	font-size: 1em;
 	color: rgb(0, 0, 0);
 	letter-spacing: 0.05em;
-	transition: 0.5s;
+	transition: 0.25s;
 }
 
 .inputBox input:valid~span,
@@ -126,7 +126,7 @@ h2 {
 	background: #cdcdce;
 	border-radius: 4px;
 	overflow: hidden;
-	transition: 0.5s;
+	transition: 0.25s;
 	pointer-events: none;
 	z-index: 9;
 }
