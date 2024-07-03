@@ -1,9 +1,13 @@
-
-body{
-    background-color: #ffffff; /* Branco */ 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
 }
 
-
+body {
+    background-color: #ffffff; /* Branco */ 
+}
 
 #logo {
     width: 13em; /* Reduzindo o tamanho da logo */
@@ -17,6 +21,11 @@ h2 {
     margin-right: 1em; /* Ajuste conforme necessário para separar a logo do título */
 }
 
+form {
+    max-width: 60rem;
+    backdrop-filter: blur(.7em);
+}
+
 #form-cadastro {
     background-color: #f2f2f2; /* Tom de branco 3D */
     padding: 20px;
@@ -24,12 +33,6 @@ h2 {
     color: #333333;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra para efeito 3D */
 
-}
-
-
-form {
-    max-width: 60rem;
-    backdrop-filter: blur(.7em);
 }
 
 input[type=radio] {
@@ -57,5 +60,3 @@ button {
     background-color: black !important;
     border: none !important;
 }
-
-
