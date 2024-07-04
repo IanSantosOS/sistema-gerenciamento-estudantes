@@ -1,13 +1,35 @@
 const db = require('./DB');
 
 class Aluno {
-    constructor() {} // cadastrar aluno no banco
+    constructor(obj) {}
 
-    deleteById() {}
+    static async register(obj) {
+        return await db.connection.execute(
+            'INSERT INTO ALUNO (usuario_admin, cpf, nome_comp, telefone, email, sexo, data_nasc, observacao, pcd, rua, numero, bairro, cidade, complemento, cep)',
+            [
+                obj.user_admin, obj.cpf, obj.nome, obj.telefone,
+                obj.email, obj.sexo, obj.nasc, obj.observacao,
+                obj.pcd, obj.rua, obj.numero, obj.bairro,
+                obj.cidade, obj.complemento, obj.cep
+            ]
+        );
+    }
 
-    editById() {}
+    static async getAll() {
+        const [rows] = await db.connection.execute('SELECT * FROM ALUNO');
+        return rows;
+    }
 
-    searchByName() {}
+    static async searchByName(name) {
+        const [rows] = await db.connection.execute("SELECT * FROM ALUNO WHERE nome_comp LIKE '%?%'", [name]);
+        return rows;
+    }
+
+    static async deleteById(id) {
+        return await db.connection.execute('DELETE FROM ALUNO WHERE id_aluno = ?', [id]);
+    }
+
+    static async editById(obj) {}
 }
 
 module.exports = Aluno;

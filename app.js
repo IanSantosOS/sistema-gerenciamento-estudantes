@@ -19,11 +19,10 @@ app.use(session({
     cookie: { secure: false }
 }));
 
-// Rotas aqui;
+// Rotas aqui
 
-app.use('/', require('./routers/homepageRouter'));
-app.use('/login', require('./routers/loginRouter'));
-app.use('/cadastro', require('./routers/cadastroRouter'));
+app.use('/', require('./routers/pagesRouter'));
+app.use('/api', require('./routers/apiRouter'));
 
 app.use((err, _req, res, _next) => {
     console.error(err.stack);

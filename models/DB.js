@@ -10,7 +10,7 @@ class DB {
             database: process.env.BCDD_DATABASE
         });
     }
-    
+
     connect() {
         this.connection.end((err) => {
             if (err) {
