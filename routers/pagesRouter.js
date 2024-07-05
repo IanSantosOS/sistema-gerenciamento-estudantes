@@ -12,7 +12,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/homepage', (req, res) => {
-    res.render('homepage');
+    res.render('homepage', { username: 'user', email: 'user@admin.com' }); // apenas teste, será alterado no futuro
 });
 
 // ADMIN
@@ -32,6 +32,14 @@ router.get('/alunos/cadastro', (req, res) => {
 });
 
 router.get('/alunos/atualizar', (req, res) => {
+    // res.render('');
+});
+
+router.get('/alunos/avaliacao', (req, res) => {
+    // res.render('');
+});
+
+router.get('/alunos/frequencia', (req, res) => {
     // res.render('');
 });
 
