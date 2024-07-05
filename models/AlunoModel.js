@@ -1,8 +1,6 @@
 const db = require('./DB');
 
 class Aluno {
-    constructor(obj) {}
-
     static async register(obj) {
         return await db.connection.execute(
             'INSERT INTO ALUNO (usuario_admin, cpf, nome_comp, telefone, email, sexo, data_nasc, observacao, pcd, rua, numero, bairro, cidade, complemento, cep)',
@@ -16,7 +14,11 @@ class Aluno {
     }
 
     static async getAll() {
-        const [rows] = await db.connection.execute('SELECT * FROM ALUNO');
+        const [rows] = await db.connection.execute(
+            'SELECT a.id_aluno, a.nome_comp, adt.cod_turma, a.telefone ' +
+            'FROM ALUNO AS a, ALUNO_DISCIPLINA_TURMA AS adt ' +
+            'WHERE a.id_aluno = adt.id_aluno'
+        );
         return rows;
     }
 
