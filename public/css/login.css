@@ -5,12 +5,12 @@
 	font-family: 'Poppins', sans-serif;
 }
 
-.container {
+body {
 	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	flex-direction: column;
 	background: #191A20;
 }
 
@@ -178,6 +178,12 @@ input[type="submit"]:active {
 	opacity: 0.8;	
 }
 
-#login {
+#btn-login {
 	color: aliceblue;
+}
+
+#logo-img {
+	height: 150px;
+	width: 500px;
+	object-fit: cover;
 }
