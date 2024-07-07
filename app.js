@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+require('./models/DB'); // Inicia a conexão ao banco de dados
+
 // Configuração
 
 app.set('view engine', 'ejs');
@@ -26,7 +28,19 @@ app.use('/api', require('./routers/apiRouter'));
 
 app.use((err, _req, res, _next) => {
     console.error(err.stack);
-    res.status(500).send('Erro interno do servidor');
+    res.status(500).render('erro', {
+        contato: true,
+        titulo:'500: Erro interno do servidor',
+        msg: 'Aconteceu um erro interno dentro do nosso servidor.'
+    });
+});
+
+app.use((_req, res) => {
+    res.status(404).render('erro', {
+        contato: false,
+        titulo: '404: Página não encontrada',
+        msg: 'Essa página não existe, verifique se a URL está correta e tente novamente.'
+    });
 });
 
 // Servidor

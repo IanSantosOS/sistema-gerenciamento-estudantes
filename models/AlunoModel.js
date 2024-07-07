@@ -13,7 +13,9 @@ class Aluno {
         );
     }
 
-    static async getAll() {
+    /* USAR VIEWS NAS PESQUISAS (SELECT) */
+
+    static async getAlunos() {
         const [rows] = await db.connection.execute(
             'SELECT a.id_aluno, a.nome_comp, adt.cod_turma, a.telefone ' +
             'FROM ALUNO AS a, ALUNO_DISCIPLINA_TURMA AS adt ' +
@@ -27,11 +29,24 @@ class Aluno {
         return rows;
     }
 
+    static async searchById(id) {
+        const [rows] = await db.connection.execute("SELECT * FROM ALUNO WHERE id_aluno = ?", [id]);
+        return rows;
+    }
+
     static async deleteById(id) {
         return await db.connection.execute('DELETE FROM ALUNO WHERE id_aluno = ?', [id]);
     }
 
     static async editById(obj) {}
+
+    static async getAvaliacoes() {}
+
+    static async editAvalicao() {}
+
+    static async getFrequencias() {}
+
+    static async editFrequencia() {}
 }
 
 module.exports = Aluno;

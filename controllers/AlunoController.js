@@ -5,11 +5,14 @@ const AlunoModel = require('../models/AlunoModel');
 //   e responsável por tratar os erros (try, catch)
 
 class AlunoController extends AlunoModel {
-    static async getAll() {
+    static async getAlunos() {
         const result = super.getAll();
     }
 
     static async searchByName(name) {
+        if (!name) {
+            name = "";
+        }
         const result = super.searchByName(name);
     }
 
