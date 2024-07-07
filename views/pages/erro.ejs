@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <%- include('../partials/head') %>
+    <title>Erro - UserSync Academy</title>
+    <link rel="shortcut icon" href="/img/home-icon.png" type="image/x-icon">
+    <style>
+        main {
+            display: grid;
+            place-items: center;
+        }
+        .box {
+            background-color: #fff;
+            max-width: 600px;
+            box-shadow: 5px 5px 50px 0 #444;
+        }
+        #voltar {
+            width: 100%;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <div class="box text-center rounded-4 p-3 mb-3">
+                <h1 class="mt-2"><%= titulo %></h1>
+                <hr>
+                <p><%= msg %></p>
+                <% if (contato) { %>
+                    <hr>
+                    <p>Se o erro persistir <a href="/homepage#contato">contate-nos</a>.</p>
+                <% } %>
+            </div>
+            <a id="voltar" href="/homepage" class="btn btn-secondary" type="button">Voltar para a Página Inicial.</a>
+        </div>
+    </main>
+</body>
+</html>
