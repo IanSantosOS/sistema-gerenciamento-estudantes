@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <%- include('../partials/head') %>
+    <title>Avaliações dos Alunos - UserSync Academy</title>
+    <link rel="shortcut icon" href="/img/home-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/lista.css">
+</head>
+<body>
+    <header>
+        <%- include('../partials/navbar') %>
+    </header>
+
+    <main>
+        <h1 class="mb-3">Avaliações</h1>
+
+        <section>
+            <nav>
+                <form autocomplete="off" id="pesquisa" class="input-group mb-3">
+                    <input id="input-pesquisa" type="text" class="form-control" placeholder="Pesquisar nome do aluno" aria-label="Pesquisar nome do aluno" aria-describedby="btn-pesquisa">
+                    <button id="btn-pesquisa" class="btn btn-success btn-listagem" type="submit">Pesquisar</button>
+                </form>
+            </nav>
+
+            <table class="table table-sm table-striped table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">TURMA</th>
+                        <th scope="col">NOME</th>
+                        <th scope="col">N1</th>
+                        <th scope="col">N2</th>
+                        <th scope="col">N3</th>
+                        <th scope="col">N4</th>
+                        <th scope="col">DISCIPLINA</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabela-avaliacoes" class="table-group-divider">
+                    <tr>
+                        <td>1</td>
+                        <td>NOME COMPLETO</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>7.5</td>
+                        <td>8.25</td>
+                        <td>Matemática</td>
+                        <td>
+                            <button class="btn btn-primary">Atualizar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>NOME COMPLETO</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>7.5</td>
+                        <td>8.25</td>
+                        <td>Programação WEB</td>
+                        <td>
+                            <button class="btn btn-primary">Atualizar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>NOME COMPLETO</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>7.5</td>
+                        <td>8.25</td>
+                        <td>Programação Orientada a Objetos</td>
+                        <td>
+                            <button class="btn btn-primary">Atualizar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>NOME COMPLETO</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>7.5</td>
+                        <td>8.25</td>
+                        <td>Banco de Dados</td>
+                        <td>
+                            <button class="btn btn-primary">Atualizar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>NOME COMPLETO</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>7.5</td>
+                        <td>8.25</td>
+                        <td>Português</td>
+                        <td>
+                            <button class="btn btn-primary">Atualizar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="pagination">
+                <button id="prev-page" class="btn btn-secondary" disabled>Anterior</button>
+                <span id="page-info">1</span>
+                <button id="next-page" class="btn btn-secondary">Próxima</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/lista-avaliacoes.js"></script>
+</body>
+</html>

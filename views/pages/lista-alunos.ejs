@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <%- include('../partials/head') %>
+    <title>Listagem de Alunos - UserSync Academy</title>
+    <link rel="shortcut icon" href="/img/cadastro-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/lista.css">
+</head>
+<body>
+    <header>
+        <%- include('../partials/navbar') %>
+    </header>
+
+    <main>
+        <div class="d-flex justify-content-between mb-3">
+            <h1>Listagem de Alunos</h1>
+            <div class="mt-2">
+                <a href="/alunos/cadastro" id="btn-cadastro" class="btn btn-primary btn-listagem">
+                    Novo Aluno
+                </a>
+            </div>
+        </div>
+
+        <section>
+            <nav>
+                <form autocomplete="off" id="pesquisa" class="input-group mb-3">
+                    <input id="input-pesquisa" type="text" class="form-control" placeholder="Pesquisar nome do aluno" aria-label="Pesquisar nome do aluno" aria-describedby="btn-pesquisa">
+                    <button id="btn-pesquisa" class="btn btn-success btn-listagem" type="submit">Pesquisar</button>
+                </form>
+            </nav>
+
+            <table class="table table-sm table-striped table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NOME</th>
+                        <th scope="col">TELEFONE</th>
+                        <th scope="col">TURMA</th>
+                        <th scope="col">AÇÕES</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabela-alunos" class="table-group-divider"></tbody>
+            </table>
+            <div id="pagination">
+                <button id="prev-page" class="btn btn-secondary" disabled>Anterior</button>
+                <span id="page-info">1</span>
+                <button id="next-page" class="btn btn-secondary">Próxima</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/lista-alunos.js"></script>
+</body>
+</html>

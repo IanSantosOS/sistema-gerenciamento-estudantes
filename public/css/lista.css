@@ -1,0 +1,11 @@
+.btn-listagem {
+    width: 8em;
+}
+
+#pagination {
+    text-align: end;
+}
+
+#pagination span {
+    margin: 0 10px;
+}
