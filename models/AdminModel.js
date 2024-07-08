@@ -3,8 +3,8 @@ const db = require('./DB');
 class Admin {
     constructor() {}
 
-    static async accessAcount(username_email, password) {
-        const [rows] = await db.execute(
+    static async accessAccount(username_email, password) {
+        const [rows] = await db.connection.execute(
             'SELECT * FROM ADMIN WHERE LOWER(usuario) = LOWER(?) or email = ?',
             [username_email, username_email]
         );
@@ -15,6 +15,14 @@ class Admin {
             return rows[0];
         }
         return undefined;
+    }
+
+    static async registerAccount(username, email, password) {
+        const [rows] = await db.connection.execute(
+            'INSERT INTO ADMIN VALUES (?, ?, ?)',
+            [username, email, password]
+        );
+        return rows;
     }
 }
 

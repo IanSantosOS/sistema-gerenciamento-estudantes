@@ -3,7 +3,11 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-require('./models/DB'); // Inicia a conexão ao banco de dados
+// todo o código está dentro de uma função assíncrona para esperar a
+// conexão com o banco de dados ser estabelecida.
+(async () => {
+
+await require('./models/DB').connect(); // Inicia a conexão ao banco de dados
 
 // Configuração
 
@@ -47,5 +51,7 @@ app.use((_req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`\n\x1b[43;1m Funcionou!!! \x1b[0m Servidor está rodando na porta: ${PORT}\x1b[0m\n`);
+    console.log(`\x1b[43;1m Funcionou!!! \x1b[0m Servidor está rodando na porta: ${PORT}\x1b[0m\n`);
 });
+
+})();
