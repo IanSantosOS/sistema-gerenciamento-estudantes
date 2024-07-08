@@ -12,7 +12,7 @@ router.get('/login/', (_req, res) => {
 });
 
 router.get('/homepage/', (_req, res) => {
-    res.render('homepage', { username: 'user', email: 'user@admin.com' }); // apenas teste, será alterado no futuro
+    res.render('homepage', { username: 'user', email: 'user@usersync.com' }); // apenas teste, será alterado no futuro
 });
 
 // --------------------- ADMIN ---------------------
@@ -24,12 +24,11 @@ router.get('/homepage/', (_req, res) => {
 // --------------------- ALUNOS ---------------------
 
 router.get('/alunos/lista/', (req, res) => {
-    const { nome } = req.query;
-    res.render('lista-alunos');
+    res.render('lista-alunos', { username: 'user', email: 'user@usersync.com' }); // apenas teste, será alterado no futuro
 });
 
 router.get('/alunos/cadastro/', (req, res) => {
-    res.render('cadastro-atualizar', { username: 'user', email: 'user@admin.com', titulo: 'cadastrar aluno', script: '/js/cadastro-aluno.js' }); // apenas teste, será alterado no futuro
+    res.render('cadastro-atualizar', { username: 'user', email: 'user@usersync.com', titulo: 'cadastrar aluno', script: '/js/cadastro-aluno.js' }); // apenas teste, será alterado no futuro
 });
 
 router.get('/alunos/atualizar/', (req, res) => {
@@ -41,16 +40,16 @@ router.get('/alunos/atualizar/', (req, res) => {
             msg: 'Não foi encontrado nenhum aluno com esse id para ser atualizado. Certifique-se de que o id se encontra na lista de alunos'
         });
     } else {
-        res.render('cadastro-atualizar', { username: 'user', email: 'user@admin.com', titulo: 'atualizar aluno', script: '/js/atualizar-aluno.js' }); // apenas teste, será alterado no futuro
+        res.render('cadastro-atualizar', { username: 'user', email: 'user@usersync.com', titulo: 'atualizar aluno', script: '/js/atualizar-aluno.js' }); // apenas teste, será alterado no futuro
     }
 });
 
 router.get('/alunos/avaliacao/', (req, res) => {
-    // res.render('');
+    res.render('lista-avaliacoes', { username: 'user', email: 'user@usersync.com' }); // apenas teste, será alterado no futuro
 });
 
 router.get('/alunos/frequencia/', (req, res) => {
-    // res.render('');
+    res.render('lista-frequencias', { username: 'user', email: 'user@usersync.com' }); // apenas teste, será alterado no futuro
 });
 
 module.exports = router;
