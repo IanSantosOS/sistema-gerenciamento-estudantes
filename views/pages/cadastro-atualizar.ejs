@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <%- include('../partials/head') %>
+    <title><%= titulo %> - UserSync Academy</title>
+    <link rel="shortcut icon" href="/img/cadastro-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/cadastro-atualizar.css">
+</head>
+
+<body>
+    <header>
+        <%- include('../partials/navbar') %>
+    </header>
+
+    <main>
+        <h1><%= titulo %></h1> <!-- coloca o título de acordo com o backend -->
+
+        <div class="box">
+            <%- include('../partials/aluno-form') %> <!-- pega o formulário já pronto no partials -->
+        </div>
+    </main>
+
+    <script src="<%= script %>"></script> <!-- pega o caminho do script no backend -->
+</body>
+</html>
