@@ -8,15 +8,16 @@
 </head>
 
 <body>
-    <header>
+    <header class="position-sticky top-0 z-3">
         <%- include('../partials/navbar') %>
     </header>
 
     <main>
-        <h1><%= titulo %></h1> <!-- coloca o título de acordo com o backend -->
-
-        <div class="box">
-            <%- include('../partials/aluno-form') %> <!-- pega o formulário já pronto no partials -->
+        <div class="box mt-4">
+            <h1><%= titulo %></h1> <!-- coloca o título de acordo com o backend -->
+            <div>
+                <%- include('../partials/aluno-form') %> <!-- pega o formulário já pronto no partials -->
+            </div>
         </div>
     </main>
 

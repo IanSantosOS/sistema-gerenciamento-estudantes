@@ -3,7 +3,7 @@ const input_pesquisa = document.querySelector('#input-pesquisa');
 
 const tabela_alunos = document.querySelector('#tabela-alunos');
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
     let query_name = "";
 
@@ -52,6 +52,5 @@ function atualizar_aluno(id) {
 }
 
 function remover_aluno(id) {
-    fetch(`/api/alunos/delete/${id}`, { method: 'DELETE' })
-        .then(_res => window.location.reload());
+    fetch(`/api/alunos/delete/${id}`, { method: 'DELETE' });
 }

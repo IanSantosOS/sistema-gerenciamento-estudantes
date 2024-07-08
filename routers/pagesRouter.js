@@ -3,23 +3,23 @@ const router = express.Router();
 
 // --------------- PÁGINAS PRINCIPAIS ---------------
 
-router.get('/', (_req, res) => {
+router.get('/', (req, res) => {
     res.redirect('/homepage');
 });
 
-router.get('/login/', (_req, res) => {
+router.get('/login/', (req, res) => {
     res.render('login');
 });
 
-router.get('/homepage/', (_req, res) => {
+router.get('/homepage/', (req, res) => {
     res.render('homepage', { username: 'user', email: 'user@usersync.com' }); // apenas teste, será alterado no futuro
 });
 
 // --------------------- ADMIN ---------------------
 
-// router.get('/admin/cadastro', (req, res) => {
-//     // res.render('');
-// });
+router.get('/admin/cadastro', (req, res) => {
+    res.render('cadastro-admin', { username: 'user', email: 'user@usersync.com' }); // apenas teste, será alterado no futuro
+});
 
 // --------------------- ALUNOS ---------------------
 
