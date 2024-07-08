@@ -18,7 +18,14 @@ class AlunoController extends AlunoModel {
     }
 
     static async deleteById(req, res) {
-        const result = super.deleteById(id);
+        const { id } = req.params;
+        try {
+            const [rows] = await super.deleteById(parseInt(id));
+            res.status(200).end();
+        } catch(err) {
+            console.error(err)
+            res.status(500).end();
+        }
     }
 
     static async editById(req, res) {
