@@ -3,22 +3,22 @@
 <head>
     <%- include('../partials/head') %>
     <title>Login - UserSync Academy</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
     <link rel="shortcut icon" href="/img/icon-newLogin.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
     <img id="logo-img" src="/img/logo.png" alt="logo do site" />
     <div class="box">
-        <form autocomplete="off">
-            <h2>Login</h2>
-            <div class="inputBox">
-                <input type="text" required="required">
-                <span>Email</span>
+        <form id="form-login" autocomplete="off">
+            <h2 class="mb-3">Login</h2>
+            <p id="error" class="mb-3"></p>
+            <div class="inputBox mb-3">
+                <input id="username-email" type="text" required>
+                <span>Usuário ou E-mail</span>
                 <i></i>
             </div>
-            <div class="inputBox">
-                <input type="password" required="required">
+            <div class="inputBox mb-3">
+                <input id="password" type="password" required>
                 <span>Senha</span>
                 <i></i>
             </div>
@@ -28,5 +28,7 @@
             <input type="submit" value="Login" id="btn-login">
         </form>
     </div>
+
+    <script src="/js/login.js"></script>
 </body>
 </html>
