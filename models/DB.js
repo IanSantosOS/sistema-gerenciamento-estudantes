@@ -3,12 +3,12 @@ const mysql = require('mysql2/promise');
 
 class DB {
     constructor() {
-        this.connect();
+        this.connectin = null;
     }
 
     async connect() {
         try {
-            console.log('Conectando ao banco de dados...');
+            console.log('\nConectando ao banco de dados...');
             this.connection = await mysql.createConnection({
                 host: process.env.BCDD_HOST,
                 user: process.env.BCDD_USER,
@@ -26,7 +26,7 @@ class DB {
 
     async end() {
         try {
-            console.log('Encerrando conexão com o banco de dados...');
+            console.log('\nEncerrando conexão com o banco de dados...');
             await this.connection.end();
             console.log('Conexão encerrada\n');
         } catch (err) {
