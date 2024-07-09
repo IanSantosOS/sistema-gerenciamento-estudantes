@@ -9,9 +9,12 @@ class AlunoController extends AlunoModel {
         let { name, offset, limit } = req.query;
         if (!name) name = "";
 
+        if (offset) offset = Number(offset);
+        if (limit) limit = Number(limit);
+
         let result = await super.searchByName(name);
         if (limit >= 1 && offset >= 0) {
-            result = result.slice(offset, offset + limit + 1);
+            result = result.slice(offset, offset + limit);
         }
 
         res.status(200).json(result);

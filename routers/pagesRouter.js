@@ -1,54 +1,85 @@
 const express = require('express');
 const router = express.Router();
 
+const AlunoMiddleware = require('../middlewares/AlunoMiddleware');
+const AlunoController = require('../controllers/AlunoController');
+
+const AdminMiddleware = require('../middlewares/AdminMiddleware');
+
 // --------------- PÁGINAS PRINCIPAIS ---------------
 
-router.get('/', (req, res) => {
+router.get('/', AdminMiddleware.loginAuth, (req, res) => {
     res.redirect('/homepage');
 });
 
 router.get('/login/', (req, res) => {
-    res.render('login');
+    if (req.session?.login) {
+        res.redirect('/homepage');
+    } else {
+        res.render('login');
+    }
 });
 
-router.get('/homepage/', (req, res) => {
-    res.render('homepage', { username: 'user', email: 'user@usersync.com' }); // apenas teste, será alterado no futuro
+router.get('/homepage/', AdminMiddleware.loginAuth, (req, res) => {
+    res.render('homepage', req.session.login);
 });
 
 // --------------------- ADMIN ---------------------
 
-router.get('/admin/cadastro', (req, res) => {
-    res.render('cadastro-admin', { username: 'user', email: 'user@usersync.com' }); // apenas teste, será alterado no futuro
+router.get('/admin/cadastro', AdminMiddleware.loginAuth, (req, res) => {
+    res.render('cadastro-admin', req.session.login);
 });
 
 // --------------------- ALUNOS ---------------------
 
-router.get('/alunos/lista/', (req, res) => {
-    res.render('lista-alunos', { username: 'user', email: 'user@usersync.com' }); // apenas teste, será alterado no futuro
-});
+router.get('/alunos/lista/', AdminMiddleware.loginAuth, (req, res) => {
+    const {page} = req.query;
 
-router.get('/alunos/cadastro/', (req, res) => {
-    res.render('cadastro-atualizar', { username: 'user', email: 'user@usersync.com', titulo: 'cadastrar aluno', script: '/js/cadastro-aluno.js' }); // apenas teste, será alterado no futuro
-});
-
-router.get('/alunos/atualizar/', (req, res) => {
-    const { id } = req.query;
-    if (id === undefined) { // mudar para uma função que pesquisa esse id em específico
-        res.render('erro', {
-            contato: true,
-            titulo: 'Aluno não encontrado',
-            msg: 'Não foi encontrado nenhum aluno com esse id para ser atualizado. Certifique-se de que o id se encontra na lista de alunos'
-        });
+    if (parseInt(page) < 1 || isNaN(page)) {
+        res.redirect('/alunos/lista?page=1');
     } else {
-        res.render('cadastro-atualizar', { username: 'user', email: 'user@usersync.com', titulo: 'atualizar aluno', script: '/js/atualizar-aluno.js' }); // apenas teste, será alterado no futuro
+        res.render('lista-alunos', req.session.login);
     }
 });
 
-router.get('/alunos/avaliacao/', (req, res) => {
+router.get('/alunos/cadastro/', AdminMiddleware.loginAuth, (req, res) => {
+    const params = {
+        ...req.session.login,
+        titulo: 'cadastrar aluno',
+        script: '/js/cadastro-aluno.js'
+    }
+    res.render('cadastro-atualizar', params);
+});
+
+router.get('/alunos/atualizar/', AdminMiddleware.loginAuth, async (req, res) => {
+    let { id } = req.query;
+    id = parseInt(id);
+
+    const params = {
+        ...req.session.login,
+        titulo: 'atualizar aluno',
+        script: '/js/atualizar-aluno.js'
+    }
+
+    if (id !== NaN && id > 0) {
+        const verifyId = (await AlunoController.getAlunoById(id))[0];
+        if (verifyId) {
+            res.render('cadastro-atualizar', params);
+            return;
+        }
+    }
+    res.render('erro', {
+        contato: true,
+        titulo: 'Aluno não encontrado',
+        msg: 'Não foi encontrado nenhum aluno com esse id para ser atualizado. Certifique-se de que o id se encontra na lista de alunos'
+    });
+});
+
+router.get('/alunos/avaliacao/', AdminMiddleware.loginAuth, (req, res) => {
     res.render('lista-avaliacoes', { username: 'user', email: 'user@usersync.com' }); // apenas teste, será alterado no futuro
 });
 
-router.get('/alunos/frequencia/', (req, res) => {
+router.get('/alunos/frequencia/', AdminMiddleware.loginAuth, (req, res) => {
     res.render('lista-frequencias', { username: 'user', email: 'user@usersync.com' }); // apenas teste, será alterado no futuro
 });
 

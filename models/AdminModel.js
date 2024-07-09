@@ -1,20 +1,13 @@
 const db = require('./DB');
 
 class Admin {
-    constructor() {}
-
-    static async accessAccount(username_email, password) {
+    static async getAdminByUsernameOrEmail(username_email) {
         const [rows] = await db.connection.execute(
-            'SELECT * FROM ADMIN WHERE LOWER(usuario) = LOWER(?) or email = ?',
+            'SELECT * FROM ADMIN WHERE LOWER(usuario) = LOWER(?) or LOWER(email) = LOWER(?)',
             [username_email, username_email]
         );
 
-        // por algum motivo o banco de dados não está diferenciando
-        // maiúsculo do minúsculo então tive que verificar a senha aqui ao invés do select
-        if (rows[0].senha === password) {
-            return rows[0];
-        }
-        return undefined;
+        return rows[0];
     }
 
     static async registerAccount(username, email, password) {

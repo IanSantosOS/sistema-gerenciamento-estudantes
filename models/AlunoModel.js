@@ -15,8 +15,6 @@ class Aluno {
         );
     }
 
-    /* USAR VIEWS NAS PESQUISAS (SELECT) */
-
     static async searchByName(name) {
         const [results] = await db.connection.execute(
             "SELECT DISTINCT a.id_aluno, a.nome_comp, adt.cod_turma, a.telefone " +
@@ -28,8 +26,12 @@ class Aluno {
         return results;
     }
 
-    static async searchById(id) {
-        const [rows] = await db.connection.execute("SELECT * FROM ALUNO WHERE id_aluno = ?", [id]);
+    static async getAlunoById(id) {
+        const [rows] = await db.connection.execute(
+            "SELECT usuario_admin, cpf, nome_comp, telefone, email, sexo, data_nasc, observacao, pcd, rua, numero, bairro, cidade, complemento, cep " +
+            "FROM ALUNO WHERE id_aluno = ?",
+            [id]
+        );
         return rows;
     }
 
@@ -42,10 +44,6 @@ class Aluno {
     static async getAvaliacoes() {}
 
     static async editAvalicao() {}
-
-    static async getFrequencias() {}
-
-    static async editFrequencia() {}
 }
 
 module.exports = Aluno;

@@ -3,7 +3,7 @@ const AlunoController = require('../controllers/AlunoController');
 class AlunoMiddleware {
     static async verifyAlunoId(req, res, next) {
         const { id } = req.params;
-        const result = await AlunoController.searchById(id);
+        const result = await AlunoController.getAlunoById(id);
 
         if (result.length === 0) {
             res.status(400).json({
