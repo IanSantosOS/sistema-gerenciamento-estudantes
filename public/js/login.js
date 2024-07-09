@@ -24,7 +24,7 @@ form_login.addEventListener('submit', (e) => {
             if (data.msg) {
                 error.textContent = data.msg;
             } else {
-                window.location.replace('/homepage/');
+                window.location.reload();
             }
         });
 });
