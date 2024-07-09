@@ -7,6 +7,9 @@
     "start": "node app",
     "dev": "node --watch app"
   },
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "keywords": [],
   "author": "Gabriel Rodrigues, Ian dos Santos, Mayara Lins, Sofia Laura",
   "license": "MIT",
