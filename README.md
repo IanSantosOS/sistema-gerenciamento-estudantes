@@ -82,6 +82,6 @@ Projeto integrado das disciplinas de POO, PWEB e Fundamentos de Banco de Dados.
 
 ## Ideia descartada 🗑️
 
-**...**
+**A decisão de priorizar o controle de notas em detrimento do controle de frequência foi baseada em uma análise cuidadosa das necessidades dos usuários, a complexidade do desenvolvimento e o objetivo central do nosso projeto. Acreditamos que essa escolha permitirá entregar uma ferramenta mais eficaz e focada para a comunidade educacional, alinhada com nossos objetivos de melhorar a gestão e o desempenho acadêmico dos estudantes.**
 
 </div>
