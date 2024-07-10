@@ -16,7 +16,7 @@
         <div class="box">
             <h1>Cadastrar Admin</h1>
             <div>
-                <form>
+                <form autocomplete="off" id="form-cadastro" novalidate>
                     <div class="mb-3">
                         <label for="username" class="form-label">Nome de usuário *</label>
                         <input type="text" class="form-control" id="username" name="username" placeholder="Usuário Nome" aria-describedby="username-error">
@@ -29,13 +29,13 @@
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Senha *</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="email@gmail.com" aria-describedby="password-error">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="senha" aria-describedby="password-error">
                         <div id="password-error" class="invalid-feedback"></div>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Confirme a Senha *</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="email@gmail.com" aria-describedby="email-error">
-                        <div id="email-error" class="invalid-feedback"></div>
+                        <label for="password-confirm" class="form-label">Confirme a Senha *</label>
+                        <input type="password" class="form-control" id="password-confirm" name="password-confirm" placeholder="confirmando a senha" aria-describedby="password-confirm-error">
+                        <div id="password-confirm-error" class="invalid-feedback"></div>
                     </div>
                     <div class="d-grid mt-3">
                         <button type="submit" class="btn btn-success">Cadastrar</button>
@@ -45,6 +45,6 @@
         </div>
     </main>
 
-    <script src="/js/cadastro-admin"></script>
+    <script src="/js/cadastro-admin.js"></script>
 </body>
 </html>

@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+const AlunoMiddleware = require('../middlewares/AlunoMiddleware');
 const AlunoController = require('../controllers/AlunoController');
 
 const AdminMiddleware = require('../middlewares/AdminMiddleware');
-const AlunoMiddleware = require('../middlewares/AlunoMiddleware');
+const AdminController = require('../controllers/AdminController');
 
 // --------------------- ADMIN ---------------------
 
@@ -17,7 +18,7 @@ router.post('/login', (req, res, next) => {
 
 router.post('/logout', AdminMiddleware.loginAuth, AdminMiddleware.logout);
 
-router.get('/admin/cadastro', (req, res) => { });
+router.post('/admin/cadastro', AdminMiddleware.verifyRegister, AdminController.registerAccount);
 
 // --------------------- ALUNOS ---------------------
 //, AlunoMiddleware.verificarQueryNomeVazio

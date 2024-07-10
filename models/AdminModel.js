@@ -17,6 +17,22 @@ class Admin {
         );
         return rows;
     }
+
+    static async hasUsername(username) {
+        const [rows] = await db.connection.execute(
+            'SELECT usuario FROM ADMIN WHERE usuario = ?',
+            [username]
+        );
+        return rows[0];
+    }
+
+    static async hasEmail(email) {
+        const [rows] = await db.connection.execute(
+            'SELECT email FROM ADMIN WHERE email = ?',
+            [email]
+        );
+        return rows[0];
+    }
 }
 
 module.exports = Admin;
