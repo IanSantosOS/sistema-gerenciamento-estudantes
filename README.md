@@ -25,16 +25,16 @@ Projeto integrado das disciplinas de POO, PWEB e Fundamentos de Banco de Dados.
 ## Perguntas ✏️
 
 1. Faça um breve comentário sobre a utilização no projeto de Orientação Objetos e suas características
-    - Resposta 1
+    - Utilizamos POO no nosso projeto nas áreas de models, controllers e middlewares, usamos conceitos como modularização, herança e polimorfismo. Modularização permitiu separar os códigos em pequenas partes, herança a criação de hierarquias e o polimorfismo permitiu que métodos com o mesmo nome tivessem comportamentos diferentes de acordo com o objetivo da classe.
 
 2. Faça um breve comentário sobre como foi realizada a conexão com o banco de dados utilizando o pacote mysql, o padrão DAO e orientação a objetos.
-    - Resposta 2
+    - Utilizamos o padrão DAO para separar a lógica de acesso a dados da lógica de negócios, fizemos isso com a ajuda do pacote mysql2 que permite a conexão ao banco de dados mysql através do javascript
 
 3. Há algum problema/erro identificado?
-    - Resposta 3
+    - Programa incompleto faltando ferramentas importantes: (cadastro, atualização e avaliação dos alunos).
 
 4. Descrição sua experiência em realizar o projeto e as dificuldades
-    - Resposta 4
+    - Mesmo tendo dificuldades como tempo e falta de comunicação conseguimos dar o nosso melhor e achamos uma experiência interessante.
 
 ## Comandos Usados Durante o Projeto ⌨️
 
