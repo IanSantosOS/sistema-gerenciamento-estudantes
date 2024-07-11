@@ -41,9 +41,26 @@ class Aluno {
 
     static async editById(obj) {}
 
-    static async getAvaliacoes() {}
+    static async getAvaliacoes(obj) {
+        const [rows] = db.connection.execute(
+            'SELECT adt.cod_turma as turma, a.nome_comp as nome, av1.nota as an1, av2.nota as n2, av3.nota as n3, av4.nota as n4, disc.nome as disc ' +
+            'FROM aluno_disciplina_turma as adt, aluno as a, discipina as disc ' +
+            'aluno_disciplina_avaliacao adv1, avaliacao av1 ' +
+            'aluno_disciplina_avaliacao adv2, avaliacao av2 ' +
+            'aluno_disciplina_avaliacao adv3, avaliacao av3 ' +
+            'aluno_disciplina_avaliacao adv4, avaliacao av4 ' +
+            'WHERE a.id_aluno = adt.id_aluno AND disc.cod_disc = adt.cod_disc AND ' +
+            'a.id_aluno = adv1.id_aluno AND a.id_aluno = adv2.id_aluno AND ' +
+            'a.id_aluno = adv3.id_aluno AND a.id_aluno = adv4.id_aluno AND ' +
+            'adt.cod_disc = adv1.cod_disc AND adt.cod_disc = adv2.cod_disc AND ' +
+            'adt.cod_disc = adv3.cod_disc AND adt.cod_disc = adv4.cod_disc AND ' +
+            'adv1.id_aval = av1.id_aval AND adv2.id_aval = av2.id_aval AND ' +
+            'adv3.id_aval = av3.id_aval AND adv4.id_aval = av4.id_aval AND'
+        )
+        return rows;
+    }
 
-    static async editAvalicao() {}
+    static async editAvalicao(obj) {}
 }
 
 module.exports = Aluno;
