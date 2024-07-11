@@ -21,7 +21,6 @@ router.post('/logout', AdminMiddleware.loginAuth, AdminMiddleware.logout);
 router.post('/admin/cadastro', AdminMiddleware.verifyRegister, AdminController.registerAccount);
 
 // --------------------- ALUNOS ---------------------
-//, AlunoMiddleware.verificarQueryNomeVazio
 
 router.get('/alunos/lista', AdminMiddleware.loginAuth, AlunoController.searchByName);
 

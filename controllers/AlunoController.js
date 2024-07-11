@@ -2,7 +2,6 @@ const AlunoModel = require('../models/AlunoModel');
 
 // Função do Controller:
 //   intermediário na comunicação do servidor com o banco de dados
-//   e responsável por tratar os erros (try, catch)
 
 class AlunoController extends AlunoModel {
     static async searchByName(req, res) {

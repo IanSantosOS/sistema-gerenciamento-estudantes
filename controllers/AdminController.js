@@ -27,7 +27,6 @@ class AdminController extends AdminModel {
                 msg: 'Erro Interno no Servidor.'
             });
         }
-
     }
 }
 
