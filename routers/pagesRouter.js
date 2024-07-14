@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const AlunoMiddleware = require('../middlewares/AlunoMiddleware');
 const AlunoController = require('../controllers/AlunoController');
-
 const AdminMiddleware = require('../middlewares/AdminMiddleware');
 
 // --------------- PÁGINAS PRINCIPAIS ---------------
@@ -76,11 +74,13 @@ router.get('/alunos/atualizar/', AdminMiddleware.loginAuth, async (req, res) => 
 });
 
 router.get('/alunos/avaliacao/', AdminMiddleware.loginAuth, (req, res) => {
-    res.render('lista-avaliacoes', { username: 'user', email: 'user@usersync.com' }); // apenas teste, será alterado no futuro
-});
-
-router.get('/alunos/frequencia/', AdminMiddleware.loginAuth, (req, res) => {
-    res.render('lista-frequencias', { username: 'user', email: 'user@usersync.com' }); // apenas teste, será alterado no futuro
+    const {page} = req.query;
+    
+    if (parseInt(page) < 1 || isNaN(page)) {
+        res.redirect('/alunos/avaliacao?page=1');
+    } else {
+        res.render('lista-avaliacoes', req.session.login);
+    }
 });
 
 module.exports = router;

@@ -68,11 +68,11 @@ class AdminMiddleware {
         if (!email.trim()) {
             msg.email = 'E-mail é obrigatório e não pode ser vazio';
         }
-        else if (await AdminController.hasEmail(email)) {
-            msg.email = 'E-mail já está em uso';
-        }
         else if (!validator.isEmail(email)) {
             msg.email = 'E-mail inválido';
+        }
+        else if (await AdminController.hasEmail(email)) {
+            msg.email = 'E-mail já está em uso';
         }
 
         if (!password.trim()) {
@@ -88,6 +88,8 @@ class AdminMiddleware {
         else if (password_confirm !== password) {
             msg.password_confirm = 'As senhas não coincidem (são diferentes)';
         }
+
+        // Verifica se existe alguma mensagem de erro
 
         if (Object.values(msg).length !== 0) {
             return res.status(400).json({ msg });

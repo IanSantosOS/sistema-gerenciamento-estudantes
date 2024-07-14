@@ -15,6 +15,20 @@ class Aluno {
         );
     }
 
+    static async updateAluno(obj) {
+        return await db.connection.execute(
+            'INSERT INTO ALUNO' +
+            '(usuario_admin, cpf, nome_comp, telefone, email, sexo, data_nasc, observacao, pcd, rua, numero, bairro, cidade, complemento, cep)' +
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            [
+                obj.user_admin, obj.cpf, obj.nome, obj.telefone,
+                obj.email, obj.sexo, obj.nasc, obj.observacao,
+                obj.pcd, obj.rua, obj.numero, obj.bairro,
+                obj.cidade, obj.complemento, obj.cep
+            ]
+        );
+    }
+
     static async searchByName(name) {
         const [results] = await db.connection.execute(
             "SELECT DISTINCT a.id_aluno, a.nome_comp, adt.cod_turma, a.telefone " +
@@ -60,7 +74,9 @@ class Aluno {
         return rows;
     }
 
-    static async editAvalicao(obj) {}
+    static async updateNotas(req, res) {
+        return
+    }
 }
 
 module.exports = Aluno;

@@ -51,10 +51,6 @@ form_cadastro.addEventListener('submit', async (e) => {
         });
 });
 
-function mostrar_mensagem_erro() {
-
-}
-
 function limpar_mensagens_erros() {
     const inputs = document.querySelectorAll('.is-invalid');
 
